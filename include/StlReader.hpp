@@ -1,6 +1,6 @@
 #include <vector>
 #include <string>
-#include "geometry.hpp"
+#include "Geometry.hpp"
 
 
 namespace simpleStlViewer {

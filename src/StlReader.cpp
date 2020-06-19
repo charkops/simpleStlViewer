@@ -1,5 +1,5 @@
 #include "StlReader.hpp"
-#include "geometry.hpp"
+#include "Geometry.hpp"
 
 #include "stl_reader/stl_reader.h"
 

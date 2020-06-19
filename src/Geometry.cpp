@@ -1,6 +1,6 @@
 
 
-#include "geometry.hpp"
+#include "Geometry.hpp"
 
 namespace simpleStlViewer {
 
