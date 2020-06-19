@@ -165,6 +165,8 @@ int main(int argc, char **argv) {
   glfwSetCursorPosCallback(window, mouse_callback);
   glfwSetScrollCallback(window, scroll_callback);
 
+  glEnable(GL_DEPTH_TEST);
+
 	simpleStlViewer::Shader shader ("../shaders/vertexShader.glsl", "../shaders/fragmentShader.glsl");
 	shader.use();	
 
@@ -183,7 +185,7 @@ int main(int argc, char **argv) {
 
 		// Clear buffer 
 		glClearColor(0.1f, 0.2f, 0.2f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glm::mat4 view = camera.GetViewMatrix();
 		sendToShader(shader, "view", view);
