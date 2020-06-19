@@ -1,0 +1,16 @@
+
+# SimpleStlViewer: a minimal stl viewer made with OpenGL (GLFW + glad)
+
+* Tested on Linux (ubuntu 18.04)
+
+# Dependencies: GLFW ()
+
+# Simple Cmake Project structure, in order to build simply:
+``` c++
+  cd ${PROJECT_SOURCE_DIR}
+  mkdir build && cd build
+  cmake ..
+  make
+  ./simpleStlViewer path_to_stl_file.stl
+
+```
