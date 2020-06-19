@@ -65,6 +65,12 @@ void processInput(GLFWwindow *window) {
 		glfwSetWindowShouldClose(window, true);
 	}
 
+  // Toggle on/off wireframe mode
+  if (glfwGetKey(window, GLFW_KEY_F1) == GLFW_PRESS)
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+  if (glfwGetKey(window, GLFW_KEY_F2) == GLFW_PRESS)
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    
   if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     camera.ProcessKeyboard(FORWARD, deltaTime);
   if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
@@ -165,7 +171,7 @@ int main(int argc, char **argv) {
   glfwSetCursorPosCallback(window, mouse_callback);
   glfwSetScrollCallback(window, scroll_callback);
 
-  glEnable(GL_DEPTH_TEST);
+  // glEnable(GL_DEPTH_TEST);
 
 	simpleStlViewer::Shader shader ("../shaders/vertexShader.glsl", "../shaders/fragmentShader.glsl");
 	shader.use();	
