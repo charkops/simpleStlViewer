@@ -3,9 +3,10 @@
 
 * Tested on Linux (ubuntu 18.04)
 
-# Dependencies: GLFW ()
+# Dependencies: GLFW 
+* sudo apt install libglfw3 libglfw3-dev
 
-# Simple Cmake Project structure, in order to build simply:
+* Simple Cmake Project structure, in order to build simply:
 ``` c++
   cd ${PROJECT_SOURCE_DIR}
   mkdir build && cd build
