@@ -3,7 +3,8 @@
 
 * Tested on Linux (ubuntu 18.04)
 
-# Dependencies: GLFW 
+# Dependencies: GLFW (&& PkgConfig) 
+* sudo apt install pkg-config
 * sudo apt install libglfw3 libglfw3-dev
 
 * Simple Cmake Project structure, in order to build simply:
