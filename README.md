@@ -8,6 +8,7 @@
 
 * Simple Cmake Project structure, in order to build simply:
 ``` c++
+  git clone --recursive https://github.com/charkops/simpleStlViewer
   cd ${PROJECT_SOURCE_DIR}
   mkdir build && cd build
   cmake ..
