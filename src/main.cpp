@@ -165,32 +165,10 @@ int main(int argc, char **argv) {
   glfwSetCursorPosCallback(window, mouse_callback);
   glfwSetScrollCallback(window, scroll_callback);
 
-
-  // glEnable(DEPTH_TEST);
-
-
 	simpleStlViewer::Shader shader ("../shaders/vertexShader.glsl", "../shaders/fragmentShader.glsl");
 	shader.use();	
 
 	StlMesh mesh (triangles);
-
-	// std::vector<float> vertices = {
-	// 	0.5, 0.5, 0.0,
-	// 	-0.5, 0.5, 0.0,
-	// 	0.0, -0.5, 0.0
-	// };
-
-	// // Setup
-	// unsigned int VAO, VBO;
-	// glGenVertexArrays(1, &VAO);
-	// glGenBuffers(1, &VBO);
-	// glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	// glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-	
-	// glBindVertexArray(VAO);
-	// glEnableVertexAttribArray(0);
-	// glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
-	// glBindVertexArray(0);
 
 	glm::mat4 model = glm::mat4(1.0f);
 	glm::mat4 view = glm::mat4(1.0f);
@@ -207,10 +185,6 @@ int main(int argc, char **argv) {
 		glClearColor(0.1f, 0.2f, 0.2f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		// glm::mat4 model (1.0f);
-		// model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0, 0, 1));
-		// sendToShader(shader, "model", model);
-
     glm::mat4 view = camera.GetViewMatrix();
 		sendToShader(shader, "view", view);
 
@@ -219,19 +193,11 @@ int main(int argc, char **argv) {
 		sendToShader(shader, "projection", projection);
 
 		mesh.Draw(shader);
-		// glBindVertexArray(VAO);
-		// glDrawArrays(GL_TRIANGLES, 0, 3);
-		// glBindVertexArray(0);
-		
-	
-		
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
-
-
 	glfwTerminate();
 	return EXIT_SUCCESS;
-
 }
